@@ -1,0 +1,66 @@
+﻿@model ListaTelefonico.Models.Endereco
+
+<div class="container">
+     <form asp-action="EnderecoVisualizar" method="post">
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Logradouro" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Logradouro" readonly />
+            </div>
+            <div class="col-4">
+                <label asp-for="Numero" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Numero" readonly/>
+            </div>
+            <div class="col-4">
+                <label asp-for="Bairro" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Bairro" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Cidade" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cidade" readonly/>
+            </div>
+            <div class="col-4">
+                <label asp-for="Cidade" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cidade" readonly/> </div>
+            <div class="col-4" class="form-control">
+                <label asp-for="UF" class="control-label pt-2"></label>
+                <select asp-for="UF" class="form-control" readonly>
+                    <option>RO</option>
+                    <option>AC</option>
+                    <option>AM</option>
+                    <option>RR</option>
+                    <option>PA</option>
+                    <option>AP</option>
+                    <option>TO</option>
+                    <option>MA</option>
+                    <option>PI</option>
+                    <option>CE</option>
+                    <option>RN</option>
+                    <option>PB</option>
+                    <option>PE</option>
+                    <option>AL</option>
+                    <option>SE</option>
+                    <option>BA</option>
+                    <option>MG</option>
+                    <option>ES</option>
+                    <option>RJ</option>
+                    <option>SP</option>
+                    <option>PR</option>
+                    <option>SC</option>
+                    <option>RS</option>
+                    <option>MT</option>
+                    <option>GO</option>
+                    <option>DF</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <footer>
+            <input type="submit" value="Criar" class="btn btn-success form-control" />
+            <a asp-action="EnderecoIndex" class="btn btn-outline-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>

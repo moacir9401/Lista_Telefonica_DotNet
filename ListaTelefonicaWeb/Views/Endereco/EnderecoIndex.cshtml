@@ -1,0 +1,63 @@
+﻿@model List<ListaTelefonico.Models.Endereco>
+
+<div class="container">
+    <a asp-controller="Contato" asp-action="ContatoVisualizar"
+       asp-route-id="@ViewData["idContato"]" class="btn btn-success">Voltar</a>
+    <br />
+    <a asp-action="EnderecoCriar" class="btn btn-primary">Novo Endereco</a>
+
+    @if (Model.Any())
+    {
+        <table class="table table-bordered table-hover">
+            <tr>
+
+                <th>Id</th>
+                <th>Logradouro</th>
+                <th>Número</th>
+                <th>Bairo</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th>CEP</th>
+                <th>Visualizar</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+            </tr>
+            @foreach (var endereco in Model)
+            {
+                <tr>
+                    <td>@endereco.Id</td>
+
+                    <td>@endereco.Logradouro</td>
+
+                    <td>@endereco.Numero</td>
+
+                    <td>@endereco.Bairro</td>
+
+                    <td>@endereco.Cidade</td>
+
+                    <td>@endereco.UF</td>
+
+                    <td>@string.Format("{0: #####:###}",endereco.CEP)</td>
+
+                    <td style="text-align:center">
+                        <a asp-action="EnderecoVisualizar" style="color:green" asp-route-id="@endereco.Id">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a>
+                    </td>
+
+                    <td style="text-align:center;">
+                        <a asp-action="EnderecoEditar" style="color:green" asp-route-id="@endereco.Id">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td style="text-align:center">
+                        <a asp-action="EnderecoExcluir" style="color:red" asp-route-id="@endereco.Id">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </a>
+                    </td>
+
+                </tr>
+            }
+        </table>
+    }
+</div>

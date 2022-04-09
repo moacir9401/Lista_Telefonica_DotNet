@@ -1,0 +1,55 @@
+﻿@model ListaTelefonico.Models.Contato
+
+<div class="container">
+     
+     <a asp-controller="Endereco" asp-action="EnderecoIndex" 
+     asp-route-id="@Model.Id" class="btn btn-primary">Endereços</a>
+     
+     <a asp-controller="Email" asp-action="EmailIndex" 
+     asp-route-id="@Model.Id" class="btn btn-primary">E-mails</a>
+     
+     <a asp-controller="Telefone" asp-action="TelefoneIndex" 
+     asp-route-id="@Model.Id" class="btn btn-primary">Telefones</a>
+
+    <form asp-action="ContatoEditar" method="post">
+         <div class="row">
+            <div class="col-4">
+                <label asp-for="Apelido" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Apelido" readonly />
+            </div>
+            <div class="col-4">
+                <label asp-for="Nome" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Nome" readonly />
+            </div>
+            <div class="col-4">
+                <label asp-for="Sobrenome" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Sobrenome" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Empresa" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Empresa" readonly/>
+            </div>
+            <div class="col-4">
+                <label asp-for="Cargo" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cargo" readonly />
+            </div>
+            <div class="col-4">
+                <label asp-for="DataNascimento" class="control-label pt-2"></label>
+                <input type="date" class="form-control" asp-for="DataNascimento" readonly />
+            </div>
+        </div>
+         <div class="row">
+             <div class="col-12">
+                <label asp-for="Observacoes" class="control-label pt-2"></label>
+                <textarea type="text" class="form-control" asp-for="Observacoes" readonly></textarea>
+            </div>
+         </div>
+        <br />
+        <footer> 
+             <a asp-action="ContatoIndex" class="btn btn-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>

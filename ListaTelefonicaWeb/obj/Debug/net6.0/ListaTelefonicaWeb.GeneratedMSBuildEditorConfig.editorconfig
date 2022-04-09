@@ -1,0 +1,116 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ListaTelefonicaWeb
+build_property.RootNamespace = ListaTelefonicaWeb
+build_property.ProjectDir = C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Contato/ContatoCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvQ3JpYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Contato/ContatoEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Contato/ContatoExcluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvRXhjbHVpci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Contato/ContatoIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Contato/ContatoVisualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvVmlzdWFsaXphci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Email/EmailCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxcRW1haWxDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Email/EmailEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxcRW1haWxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Email/EmailExcluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxcRW1haWxFeGNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Email/EmailIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxcRW1haWxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Email/EmailVisualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1haWxcRW1haWxWaXN1YWxpemFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Endereco/EnderecoCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRW5kZXJlY29Dcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Endereco/EnderecoEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRW5kZXJlY29FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Endereco/EnderecoExcluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRW5kZXJlY29FeGNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Endereco/EnderecoIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRW5kZXJlY29JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Endereco/EnderecoVisualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRW5kZXJlY29WaXN1YWxpemFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Telefone/TelefoneCriar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbmVcVGVsZWZvbmVDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Telefone/TelefoneEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbmVcVGVsZWZvbmVFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Telefone/TelefoneExcluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbmVcVGVsZWZvbmVFeGNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Telefone/TelefoneIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbmVcVGVsZWZvbmVJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Telefone/TelefoneVisualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbmVcVGVsZWZvbmVWaXN1YWxpemFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moaci.MOACIR.000/source/repos/ListaTelefonicaWeb/ListaTelefonicaWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-r3uh080bae

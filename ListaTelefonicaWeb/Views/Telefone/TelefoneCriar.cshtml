@@ -1,0 +1,31 @@
+﻿@model ListaTelefonico.Models.Telefone
+
+<div class="container">
+    <form asp-action="TelefoneCriar" method="post">
+                 <input type="text" class="form-control" asp-for="IdContato" hidden />
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Id" class="control-label pt-2"></label>
+                <input type="text" class="form-control" readonly asp-for="Id" /> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Numero" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Numero" />
+                <span asp-validation-for="Numero" class="text-danger" />
+            </div>
+        </div>
+        <br />
+        <footer>
+            <input type="submit" value="Criar" class="btn btn-success form-control" />
+            <a asp-action="TelefoneIndex" class="btn btn-outline-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,83 @@
+﻿@model ListaTelefonico.Models.Endereco
+
+<div class="container">
+     <form asp-action="EnderecoEditar" method="post">
+                      <input type="text" class="form-control" asp-for="IdContato" hidden />
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Id" class="control-label pt-2"></label>
+                <input type="text" class="form-control" readonly asp-for="Id" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Logradouro" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Logradouro" />
+                <span asp-validation-for="Logradouro" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Numero" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Numero" />
+                <span asp-validation-for="Numero" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Bairro" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Bairro" />
+                <span asp-validation-for="Bairro" class="text-danger" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Cidade" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cidade" />
+                <span asp-validation-for="Cidade" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Cidade" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cidade" /> </div>
+            <div class="col-4" class="form-control">
+                <label asp-for="UF" class="control-label pt-2"></label>
+                <select asp-for="UF" class="form-control">
+                    <option>RO</option>
+                    <option>AC</option>
+                    <option>AM</option>
+                    <option>RR</option>
+                    <option>PA</option>
+                    <option>AP</option>
+                    <option>TO</option>
+                    <option>MA</option>
+                    <option>PI</option>
+                    <option>CE</option>
+                    <option>RN</option>
+                    <option>PB</option>
+                    <option>PE</option>
+                    <option>AL</option>
+                    <option>SE</option>
+                    <option>BA</option>
+                    <option>MG</option>
+                    <option>ES</option>
+                    <option>RJ</option>
+                    <option>SP</option>
+                    <option>PR</option>
+                    <option>SC</option>
+                    <option>RS</option>
+                    <option>MT</option>
+                    <option>GO</option>
+                    <option>DF</option>
+                </select>
+            </div>
+                <span asp-validation-for="UF" class="text-danger" />
+        </div>
+        <br />
+        <footer>
+            <input type="submit" value="Criar" class="btn btn-success form-control" />
+            <a asp-action="EnderecoIndex" class="btn btn-outline-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

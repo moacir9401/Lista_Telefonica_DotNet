@@ -1,0 +1,59 @@
+﻿@model ListaTelefonico.Models.Contato
+
+<div class="container">
+     
+    <form asp-action="ContatoEditar" method="post">
+        <input asp-for="Id" hidden /> 
+        
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Apelido" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Apelido" />                
+                <span asp-validation-for="Apelido" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Nome" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Nome" />
+                <span asp-validation-for="Nome" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Sobrenome" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Sobrenome" />
+                <span asp-validation-for="Sobrenome" class="text-danger" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Empresa" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Empresa" />
+                <span asp-validation-for="Empresa" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Cargo" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Cargo" />
+                <span asp-validation-for="Cargo" class="text-danger" />
+            </div>
+            <div class="col-4">
+                <label asp-for="DataNascimento" class="control-label pt-2"></label>
+                <input type="date" class="form-control" asp-for="DataNascimento" />
+                <span asp-validation-for="DataNascimento" class="text-danger" />
+            </div>
+        </div>
+         <div class="row">
+             <div class="col-12">
+                <label asp-for="Observacoes" class="control-label pt-2"></label>
+                <textarea type="text" class="form-control" asp-for="Observacoes"></textarea>
+            </div>
+         </div>
+        <br />
+        <footer>
+            <input type="submit" value="Editar" class="btn btn-success form-control" />
+             <a asp-action="ContatoIndex" class="btn btn-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

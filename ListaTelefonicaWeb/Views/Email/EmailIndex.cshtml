@@ -1,0 +1,45 @@
+﻿@model List<ListaTelefonico.Models.Email>
+
+<div class="container">
+     <a asp-controller="Contato" asp-action="ContatoVisualizar" 
+      asp-route-id="@ViewData["idContato"]" class="btn btn-success">Voltar</a>
+      <br/>
+    <a asp-action="EmailCriar" class="btn btn-primary">Novo Email</a>
+     @if (Model.Any())
+    {
+        <table class="table table-bordered table-hover">
+            <tr>
+
+                <th>Id</th>
+                <th>E-mail</th> 
+                <th>Visualizar</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+            </tr>
+            @foreach (var email in Model)
+            {
+                <tr>
+                    <td>@email.Id</td>
+
+                    <td>@email.Descricao</td> 
+
+                    <td style="text-align:center">
+                        <a asp-action="EmailVisualizar" style="color:green" asp-route-id="@email.Id">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a></td>
+
+                    <td style="text-align:center;">
+                        <a asp-action="EmailEditar" style="color:green" asp-route-id="@email.Id">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td style="text-align:center">
+                        <a asp-action="EmailExcluir" style="color:red" asp-route-id="@email.Id">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </a></td>
+
+                </tr>
+            }
+        </table>
+    }
+</div>

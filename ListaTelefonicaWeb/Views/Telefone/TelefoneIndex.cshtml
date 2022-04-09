@@ -1,0 +1,46 @@
+﻿@model List<ListaTelefonico.Models.Telefone>
+
+<div class="container">
+     <a asp-controller="Contato" asp-action="ContatoVisualizar" 
+      asp-route-id="@ViewData["idContato"]" class="btn btn-success">Voltar</a>
+      <br/>
+    <a asp-action="TelefoneCriar" class="btn btn-primary">Novo Telefone</a>
+
+     @if (Model.Any())
+    {
+        <table class="table table-bordered table-hover">
+            <tr>
+
+                <th>Id</th> 
+                <th>Número</th>   
+                <th>Visualizar</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+            </tr>
+            @foreach (var telefone in Model)
+            {
+                <tr>
+                    <td>@telefone.Id</td> 
+
+                    <td>@telefone.Numero</td> 
+
+                    <td style="text-align:center">
+                        <a asp-action="TelefoneVisualizar" style="color:green" asp-route-id="@telefone.Id">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a></td>
+
+                    <td style="text-align:center;">
+                        <a asp-action="TelefoneEditar" style="color:green" asp-route-id="@telefone.Id">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td style="text-align:center">
+                        <a asp-action="TelefoneExcluir" style="color:red" asp-route-id="@telefone.Id">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </a></td>
+
+                </tr>
+            }
+        </table>
+    }
+</div>

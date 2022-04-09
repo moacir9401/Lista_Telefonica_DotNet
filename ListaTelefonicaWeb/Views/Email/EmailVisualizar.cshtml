@@ -1,0 +1,18 @@
+﻿@model ListaTelefonico.Models.Email
+
+<div class="container">
+     <form asp-action="EmailVisualizar" method="post">
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Descricao" class="control-label pt-2"></label>
+                <input type="text" class="form-control" asp-for="Descricao" readonly />
+            </div> 
+        </div>
+        <br />
+        <footer>
+            <input type="submit" value="Criar" class="btn btn-success form-control" />
+            <a asp-action="EmailIndex" class="btn btn-outline-primary  form-control">Voltar</a>
+        </footer>
+    </form>
+
+</div>
