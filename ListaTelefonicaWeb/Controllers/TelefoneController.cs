@@ -1,20 +1,21 @@
-﻿using ListaTelefonico.Models;
-using ListaTelefonico.Services.Interface;
+﻿using ListaTelefonicaWeb.Models.Context;
+using ListaTelefonico.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ListaTelefonicaWeb.Controllers
 {
     public class TelefoneController : Controller
     {
-        private ITelefoneServices _telefoneServices;
+        private Context _context;
         private static Guid idContato { get; set; }
 
-        public TelefoneController(ITelefoneServices telefoneServices)
+        public TelefoneController(Context context)
         {
-            _telefoneServices = telefoneServices;
+            _context = context;
         }
 
-        public IActionResult TelefoneIndex(Guid? id)
+        public async Task<IActionResult> TelefoneIndex(Guid? id)
         {
             if (id != null)
             {
@@ -23,15 +24,15 @@ namespace ListaTelefonicaWeb.Controllers
 
             @ViewData["idContato"] = idContato;
 
-            var telefones = _telefoneServices.GetAllTelefones();
+            var telefones = await _context.Telefones.ToListAsync();
 
             return View(telefones);
         }
 
         [HttpGet("TelefoneVisualizar")]
-        public IActionResult TelefoneVisualizar(Guid id)
+        public async Task<IActionResult> TelefoneVisualizar(Guid id)
         {
-            var telefone = _telefoneServices.GetTelefone(id);
+            var telefone = await _context.Telefones.FirstAsync(t => t.Id == id);
 
             return View(telefone);
         }
@@ -48,25 +49,27 @@ namespace ListaTelefonicaWeb.Controllers
         }
 
         [HttpPost("TelefoneCriar")]
-        public IActionResult TelefoneCriar(Telefone telefone)
+        public async Task<IActionResult> TelefoneCriar(Telefone telefone)
         {
-            _telefoneServices.CreateTelefone(telefone);
+            await _context.Telefones.AddAsync(telefone);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(TelefoneIndex));
         }
 
         [HttpGet("TelefoneEditar")]
-        public IActionResult TelefoneEditar(Guid id)
+        public async Task<IActionResult> TelefoneEditar(Guid id)
         {
-            var telefone = _telefoneServices.GetTelefone(id);
+            var telefone = await _context.Telefones.FirstAsync(t => t.Id == id);
 
             return View(telefone);
         }
 
         [HttpPost("TelefoneEditar")]
-        public IActionResult TelefoneEditar(Telefone telefone)
+        public async Task<IActionResult> TelefoneEditar(Telefone telefone)
         {
-            _telefoneServices.UpdateTelefone(telefone);
+            _context.Telefones.Update(telefone);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(TelefoneIndex));
         }
@@ -74,15 +77,16 @@ namespace ListaTelefonicaWeb.Controllers
         [HttpGet("TelefoneExcluir")]
         public IActionResult TelefoneExcluir(Guid id)
         {
-            var telefone = _telefoneServices.GetTelefone(id);
+            var telefone = _context.Telefones.FirstAsync(t => t.Id == id);
 
             return View(telefone);
         }
 
         [HttpPost("TelefoneExcluir")]
-        public IActionResult TelefoneExcluir(Telefone telefone)
+        public async Task<IActionResult> TelefoneExcluir(Telefone telefone)
         {
-            _telefoneServices.DeleteTelefone(telefone.Id);
+            _context.Telefones.Remove(telefone);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(TelefoneIndex));
         }

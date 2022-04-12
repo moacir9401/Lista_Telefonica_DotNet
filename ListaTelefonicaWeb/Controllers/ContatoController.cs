@@ -1,24 +1,25 @@
-﻿using ListaTelefonico.Models;
-using ListaTelefonico.Services.Interface;
+﻿using ListaTelefonicaWeb.Models.Context;
+using ListaTelefonico.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ListaTelefonicaWeb.Controllers
 {
     public class ContatoController : Controller
     {
-        private readonly IContatoServices _contatoServices;
+        private readonly Context _context;
 
-        public ContatoController(IContatoServices contatoServices)
+        public ContatoController(Context context)
         {
-            _contatoServices = contatoServices;
+            _context = context;
         }
-         
-        public IActionResult ContatoIndex()
+
+        public async Task<IActionResult> ContatoIndex()
         {
-            if (!_contatoServices.GetAllContatos().Any())
+            if (!_context.Contatos.Any())
             {
 
-                _contatoServices.CreateContato(new Contato()
+                _context.Contatos.Add(new Contato()
                 {
                     Nome = "moacir ",
                     Sobrenome = "afonso",
@@ -27,24 +28,26 @@ namespace ListaTelefonicaWeb.Controllers
                     Apelido = "moacir aa"
                 });
 
-                _contatoServices.CreateContato(new Contato()
+                _context.Contatos.Add(new Contato()
                 {
                     Nome = "gustavo",
                     Sobrenome = "henrique",
                     Cargo = "angula",
                     Empresa = "d&t"
-                }); 
+                });
+
+                await _context.SaveChangesAsync();
             }
 
-            var contatos = _contatoServices.GetAllContatos();
+            var contatos = await _context.Contatos.ToListAsync();
 
             return View(contatos);
         }
 
         [HttpGet("ContatoVisualizar")]
-        public IActionResult ContatoVisualizar(Guid id)
+        public async Task<IActionResult> ContatoVisualizar(Guid id)
         {
-            var contato = _contatoServices.GetContato(id); 
+            var contato = _context.Contatos.FindAsync(id);
             return View(contato);
         }
 
@@ -55,41 +58,45 @@ namespace ListaTelefonicaWeb.Controllers
         }
 
         [HttpPost("ContatoCriar")]
-        public IActionResult ContatoCriar(Contato contato)
+        public async Task<IActionResult> ContatoCriar(Contato contato)
         {
-            _contatoServices.CreateContato(contato);
+            await _context.Contatos.AddAsync(contato);
+            _context.SaveChanges();
 
             return RedirectToAction(nameof(ContatoIndex));
         }
 
         [HttpGet("ContatoEditar")]
-        public IActionResult ContatoEditar(Guid id)
+        public async Task<IActionResult> ContatoEditar(Guid id)
         {
-            var contato = _contatoServices.GetContato(id);
+            var contato = await _context.Contatos.FirstAsync(c => c.Id == id);
+            _context.SaveChanges();
 
             return View(contato);
         }
 
         [HttpPost("ContatoEditar")]
-        public IActionResult ContatoEditar(Contato contato)
+        public async Task<IActionResult> ContatoEditar(Contato contato)
         {
-            _contatoServices.UpdateContato(contato);
+            _context.Contatos.Update(contato);
+            _context.SaveChanges();
 
             return RedirectToAction(nameof(ContatoIndex));
         }
 
         [HttpGet("ContatoExcluir")]
-        public IActionResult ContatoExcluir(Guid id)
+        public async Task<IActionResult> ContatoExcluir(Guid id)
         {
-            var contato = _contatoServices.GetContato(id);
+            var contato = _context.Contatos.FirstAsync(c => c.Id == id);
 
             return View(contato);
         }
 
         [HttpPost("ContatoExcluir")]
-        public IActionResult ContatoExcluir(Contato contato)
+        public async Task<IActionResult> ContatoExcluir(Contato contato)
         {
-            _contatoServices.DeleteContato(contato.Id);
+            _context.Contatos.Remove(contato);
+            _context.SaveChanges();
 
             return RedirectToAction(nameof(ContatoIndex));
         }

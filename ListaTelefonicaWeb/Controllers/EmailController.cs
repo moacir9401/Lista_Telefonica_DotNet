@@ -1,21 +1,22 @@
-﻿using ListaTelefonico.Models;
-using ListaTelefonico.Services.Interface;
+﻿using ListaTelefonicaWeb.Models.Context;
+using ListaTelefonico.Models; 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ListaTelefonicaWeb.Controllers
 {
     public class EmailController : Controller
     {
-        private IEmailServices _emailServices;
+        private Context _context;
 
         private static Guid idContato { get; set; }
 
-        public EmailController(IEmailServices emailServices)
+        public EmailController(Context context)
         {
-            _emailServices = emailServices;
+            _context = context;
         }
 
-        public IActionResult EmailIndex(Guid? id)
+        public async Task<IActionResult> EmailIndex(Guid? id)
         {
             if (id != null)
             {
@@ -24,15 +25,15 @@ namespace ListaTelefonicaWeb.Controllers
 
             @ViewData["idContato"] = idContato;
 
-            var emails = _emailServices.GetAllEmails();
+            var emails = await _context.Emails.ToListAsync();
 
             return View(emails);
         }
 
         [HttpGet("EmailVisualizar")]
-        public IActionResult EmailVisualizar(Guid id)
+        public async Task<IActionResult> EmailVisualizar(Guid id)
         {
-            var email = _emailServices.GetEmail(id);
+            var email = await _context.Emails.FirstAsync(e => e.Id == id);
 
             return View(email);
         }
@@ -49,41 +50,44 @@ namespace ListaTelefonicaWeb.Controllers
         }
 
         [HttpPost("EmailCriar")]
-        public IActionResult EmailCriar(Email email)
+        public async Task<IActionResult> EmailCriar(Email email)
         {
-            _emailServices.CreateEmail(email);
+            await _context.Emails.AddAsync(email);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EmailIndex));
         }
 
         [HttpGet("EmailEditar")]
-        public IActionResult EmailEditar(Guid id)
+        public async Task<IActionResult> EmailEditar(Guid id)
         {
-            var email = _emailServices.GetEmail(id);
+            var email = await _context.Emails.FirstAsync(e => e.Id == id);
 
             return View(email);
         }
 
         [HttpPost("EmailEditar")]
-        public IActionResult EmailEditar(Email email)
+        public async Task<IActionResult> EmailEditar(Email email)
         {
-            _emailServices.UpdateEmail(email);
+            _context.Emails.Update(email);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EmailIndex));
         }
 
         [HttpGet("EmailExcluir")]
-        public IActionResult EmailExcluir(Guid id)
+        public async Task<IActionResult> EmailExcluir(Guid id)
         {
-            var email = _emailServices.GetEmail(id);
+            var email = _context.Emails.FirstAsync(e => e.Id == id);
 
             return View(email);
         }
 
         [HttpPost("EmailExcluir")]
-        public IActionResult EmailExcluir(Email email)
+        public async Task<IActionResult> EmailExcluir(Email email)
         {
-            _emailServices.DeleteEmail(email.Id);
+            _context.Emails.Remove(email);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EmailIndex));
         }

@@ -1,15 +1,16 @@
-using ListaTelefonico.Services;
-using ListaTelefonico.Services.Interface;
+using ListaTelefonicaWeb.Models.Context; 
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(); 
 
-builder.Services.AddSingleton<IContatoServices>(new ContatoServices());
-builder.Services.AddSingleton<IEnderecoServices>(new EnderecoServices());
-builder.Services.AddSingleton<ITelefoneServices>(new TelefoneServices());
-builder.Services.AddSingleton<IEmailServices>(new EmailServices());
+builder.Services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase(databaseName: "Contatos"));
+builder.Services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase(databaseName: "Enderecos"));
+builder.Services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase(databaseName: "Emails"));
+builder.Services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase(databaseName: "Telefones"));
+
 
 var app = builder.Build();
 

@@ -1,20 +1,21 @@
-﻿using ListaTelefonico.Models;
-using ListaTelefonico.Services.Interface;
+﻿using ListaTelefonicaWeb.Models.Context;
+using ListaTelefonico.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ListaTelefonicaWeb.Controllers
 {
     public class EnderecoController : Controller
     {
-        private IEnderecoServices _enderecoServices;
+        private Context _context;
         private static Guid idContato { get; set; }
 
-        public EnderecoController(IEnderecoServices enderecoServices)
+        public EnderecoController(Context context)
         {
-            _enderecoServices = enderecoServices;
+            _context = context;
         }
 
-        public IActionResult EnderecoIndex(Guid? id)
+        public async Task<IActionResult> EnderecoIndex(Guid? id)
         {
             if (id != null)
             {
@@ -23,21 +24,21 @@ namespace ListaTelefonicaWeb.Controllers
 
             @ViewData["idContato"] = idContato;
 
-            var enderecos = _enderecoServices.GetAllEnderecos();
+            var enderecos = await _context.Enderecos.ToListAsync();
 
             return View(enderecos);
         }
 
         [HttpGet("EnderecoVisualizar")]
-        public IActionResult EnderecoVisualizar(Guid id)
+        public async Task<IActionResult> EnderecoVisualizar(Guid id)
         {
-            var endereco = _enderecoServices.GetEndereco(id);
+            var endereco = _context.Enderecos.FirstAsync(e => e.Id == id);
 
             return View(endereco);
         }
 
         [HttpGet("EnderecoCriar")]
-        public IActionResult EnderecoCriar(Guid idContato)
+        public async Task<IActionResult> EnderecoCriar(Guid idContato)
         {
             var endereco = new Endereco()
             {
@@ -48,41 +49,45 @@ namespace ListaTelefonicaWeb.Controllers
         }
 
         [HttpPost("EnderecoCriar")]
-        public IActionResult EnderecoCriar(Endereco endereco)
+        public async Task<IActionResult> EnderecoCriar(Endereco endereco)
         {
-            _enderecoServices.CreateEndereco(endereco);
+            await _context.Enderecos.AddAsync(endereco);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EnderecoIndex));
         }
 
         [HttpGet("EnderecoEditar")]
-        public IActionResult EnderecoEditar(Guid id)
+        public async Task<IActionResult> EnderecoEditar(Guid id)
         {
-            var endereco = _enderecoServices.GetEndereco(id);
+            var endereco = _context.Enderecos.FirstAsync(e => e.Id == id);
 
             return View(endereco);
         }
 
         [HttpPost("EnderecoEditar")]
-        public IActionResult EnderecoEditar(Endereco endereco)
+        public async Task<IActionResult> EnderecoEditar(Endereco endereco)
         {
-            _enderecoServices.UpdateEndereco(endereco);
+            _context.Enderecos.Update(endereco);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EnderecoIndex));
         }
 
         [HttpGet("EnderecoExcluir")]
-        public IActionResult EnderecoExcluir(Guid id)
+        public async Task<IActionResult> EnderecoExcluir(Guid id)
         {
-            var endereco = _enderecoServices.GetEndereco(id);
+            var endereco = await _context.Enderecos.FirstAsync(e => e.Id == id);
+            await _context.SaveChangesAsync();
 
             return View(endereco);
         }
 
         [HttpPost("EnderecoExcluir")]
-        public IActionResult EnderecoExcluir(Endereco endereco)
+        public async Task<IActionResult> EnderecoExcluir(Endereco endereco)
         {
-            _enderecoServices.DeleteEndereco(endereco.Id);
+            _context.Enderecos.Remove(endereco);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(EnderecoIndex));
         }

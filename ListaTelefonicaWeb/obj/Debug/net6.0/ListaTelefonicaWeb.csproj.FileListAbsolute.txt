@@ -24,3 +24,12 @@ C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj
 C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj\Debug\net6.0\ref\ListaTelefonicaWeb.dll
 C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj\Debug\net6.0\ListaTelefonicaWeb.pdb
 C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj\Debug\net6.0\ListaTelefonicaWeb.genruntimeconfig.cache
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj\Debug\net6.0\ListaTelefonicaWeb.csproj.CopyComplete
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\moaci.MOACIR.000\source\repos\ListaTelefonicaWeb\ListaTelefonicaWeb\obj\Debug\net6.0\ListaTelefonicaWeb.MvcApplicationPartsAssemblyInfo.cs
